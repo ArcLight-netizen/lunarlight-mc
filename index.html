@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="LunarLightMC - 一款温暖友好的 Minecraft 服务器。全版本（包括基岩版）兼容，辅助类 Mod 可用。">
+  <meta name="theme-color" content="#1a1a1a">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch.png">
+  <title>LunarLightMC · 月光服务器</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Electron 风格自定义标题栏 -->
+  <header class="titlebar">
+    <div class="titlebar-brand">
+      <img class="titlebar-icon" src="assets/favicon.png" alt="LunarLightMC">
+      <span class="titlebar-title">LunarLightMC</span>
+    </div>
+    <div class="titlebar-drag"></div>
+  </header>
+
+  <!-- Electron 式左侧导航 -->
+  <button class="nav-toggle" id="navToggle" aria-label="打开导航菜单">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-backdrop" id="navBackdrop"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <a class="brand" href="#" data-target="home">
+        <img class="brand-icon" src="assets/favicon.png" alt="LunarLightMC 图标">
+        <span class="brand-name">LunarLightMC</span>
+      </a>
+    </div>
+    <nav class="side-nav" id="navLinks">
+      <a class="side-link active" href="#" data-target="home">
+        <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 1.5 17 8v9a1.5 1.5 0 0 1-1.5 1.5H12v-5H8v5H4.5A1.5 1.5 0 0 1 3 17V8l7-6.5Z" fill="currentColor"/></svg>
+        <span>首页</span>
+      </a>
+      <a class="side-link" href="#" data-target="server">
+        <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M2 5.5C2 4.67 2.67 4 3.5 4h13c.83 0 1.5.67 1.5 1.5v9c0 .83-.67 1.5-1.5 1.5h-13A1.5 1.5 0 0 1 2 14.5v-9ZM3.5 5v9h13V5h-13Zm5.5 2h4v1H9V7Zm0 5h4v1H9v-1Zm0-2.5h2v1H9v-1Z" fill="currentColor"/></svg>
+        <span>服务器信息</span>
+      </a>
+      <a class="side-link" href="#" data-target="hardware">
+        <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 3h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Zm3 4a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm7 1h2v1h-2V8Zm0 3h2v1h-2v-1Z" fill="currentColor"/></svg>
+        <span>详细信息</span>
+      </a>
+      <a class="side-link" href="#" data-target="rules">
+        <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 1.5 4 3.5V9c0 3.7 2.6 6.6 6 7.5 3.4-.9 6-3.8 6-7.5V3.5l-6-2Zm0 1.8L14.7 5.6 14 10.2c-.1.9-.3 1.8-.8 2.7.3.5.6 1 .9 1.6-2.7 1.2-5.9 1-8.1-1.7.4-2 .4-4.1 0-6.1L10 3.3Z" fill="currentColor"/></svg>
+        <span>群规</span>
+      </a>
+      <a class="side-link" href="#" data-target="contact">
+        <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 5.5C3 4.67 3.67 4 4.5 4h11c.83 0 1.5.67 1.5 1.5v9c0 .83-.67 1.5-1.5 1.5h-11A1.5 1.5 0 0 1 3 14.5v-9Zm1.5.5v.65L10 10.4l5.5-4.25V6H4.5Zm0 1.5V14.5h11V7.5L10 11.6 4.5 7.5Z" fill="currentColor"/></svg>
+        <span>联系我们</span>
+      </a>
+    </nav>
+    <div class="sidebar-foot">
+      <p>LunarLight 管理组</p>
+    </div>
+  </aside>
+
+  <main>
+    <!-- 页面：首页 -->
+    <section class="page active" id="page-home">
+      <div class="hero">
+        <div class="hero-bg" aria-hidden="true">
+          <span class="orb orb-1"></span>
+          <span class="orb orb-2"></span>
+          <span class="orb orb-3"></span>
+        </div>
+        <div class="container hero-inner">
+          <div class="hero-icon-wrap">
+            <img class="hero-icon" src="assets/server-icon.png" alt="LunarLightMC 一周年庆典图标">
+          </div>
+          <div class="hero-badge">Minecraft 1.21.8 · 全版本（包括基岩版）兼容</div>
+          <h1 class="hero-title">月光洒落之处<br><em>皆是冒险的起点</em></h1>
+          <p class="hero-sub">
+            LunarLightMC 欢迎每一位玩家。允许使用辅助类 Mod，坚决拒绝作弊，
+            在这里找到属于你的那份宁静与乐趣。
+          </p>
+          <div class="hero-actions">
+            <button class="btn btn-primary" id="copyIp">
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5.5 4.5A2.5 2.5 0 0 1 8 2h6.5A2.5 2.5 0 0 1 17 4.5v6.5a2.5 2.5 0 0 1-2.5 2.5h-6.5A2.5 2.5 0 0 1 5.5 11v-6.5Z" fill="currentColor"/><path d="M3 6a2.5 2.5 0 0 1 2.5-2.5h6.5A2.5 2.5 0 0 1 14.5 6v6.5a2.5 2.5 0 0 1-2.5 2.5H5.5A2.5 2.5 0 0 1 3 12.5V6Z" fill="currentColor" opacity=".45"/></svg>
+              <span class="copy-text">复制服务器地址</span>
+            </button>
+          </div>
+
+          <div class="status-card" id="statusCard">
+            <div class="status-head">
+              <span class="status-dot" id="statusDot"></span>
+              <span class="status-state" id="statusState">正在连接服务器…</span>
+              <span class="status-version" id="statusVersion"></span>
+              <button class="status-refresh" id="statusRefresh" aria-label="刷新状态">
+                <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M17 10a7 7 0 0 1-12.2 4.9l-1 1A8.5 8.5 0 1 0 10 1.5v-1L7 3l3 2.5v-1A7 7 0 0 1 17 10Z" fill="currentColor"/></svg>
+              </button>
+            </div>
+            <p class="status-motd" id="statusMotd">连接中，正在获取服务器信息…</p>
+            <div class="status-foot">
+              <span class="status-players" id="statusPlayers">玩家 0 / 0</span>
+              <span class="status-updated" id="statusUpdated"></span>
+            </div>
+            <div class="status-players-list" id="statusPlayerList"></div>
+          </div>
+
+          <div class="hero-tip" id="copyTip">已复制到剪贴板 · 期待与你相遇</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 页面：服务器信息 -->
+    <section class="page" id="page-server">
+      <div class="container page-body">
+        <div class="page-head">
+          <h2 class="page-title">服务器信息</h2>
+          <p class="page-desc">连接地址与进入方式</p>
+        </div>
+        <div class="card-grid">
+          <article class="fluent-card address-card">
+            <div class="card-icon"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 2a6 6 0 0 0-6 6c0 4 6 10 6 10s6-6 6-10a6 6 0 0 0-6-6Zm0 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4Z" fill="currentColor"/></svg></div>
+            <h3>主地址</h3>
+            <p class="card-code">mc.arclight.icu</p>
+            <button class="copy-btn" data-copy="mc.arclight.icu" aria-label="复制主地址">
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5.5 4.5A2.5 2.5 0 0 1 8 2h6.5A2.5 2.5 0 0 1 17 4.5v6.5a2.5 2.5 0 0 1-2.5 2.5h-6.5A2.5 2.5 0 0 1 5.5 11v-6.5Z" fill="currentColor"/><path d="M3 6a2.5 2.5 0 0 1 2.5-2.5h6.5A2.5 2.5 0 0 1 14.5 6v6.5a2.5 2.5 0 0 1-2.5 2.5H5.5A2.5 2.5 0 0 1 3 12.5V6Z" fill="currentColor" opacity=".45"/></svg>
+              复制
+            </button>
+          </article>
+          <article class="fluent-card address-card">
+            <div class="card-icon"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 2a6 6 0 0 0-6 6c0 4 6 10 6 10s6-6 6-10a6 6 0 0 0-6-6Zm0 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4Z" fill="currentColor"/></svg></div>
+            <h3>备用地址</h3>
+            <p class="card-code">hb.arclight.icu</p>
+            <button class="copy-btn" data-copy="hb.arclight.icu" aria-label="复制备用地址">
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5.5 4.5A2.5 2.5 0 0 1 8 2h6.5A2.5 2.5 0 0 1 17 4.5v6.5a2.5 2.5 0 0 1-2.5 2.5h-6.5A2.5 2.5 0 0 1 5.5 11v-6.5Z" fill="currentColor"/><path d="M3 6a2.5 2.5 0 0 1 2.5-2.5h6.5A2.5 2.5 0 0 1 14.5 6v6.5a2.5 2.5 0 0 1-2.5 2.5H5.5A2.5 2.5 0 0 1 3 12.5V6Z" fill="currentColor" opacity=".45"/></svg>
+              复制
+            </button>
+          </article>
+          <article class="fluent-card address-card">
+            <div class="card-icon"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 2a6 6 0 0 0-6 6c0 4 6 10 6 10s6-6 6-10a6 6 0 0 0-6-6Zm0 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4Z" fill="currentColor"/></svg></div>
+            <h3>备用地址 2</h3>
+            <p class="card-code">7891.映射.中国</p>
+            <button class="copy-btn" data-copy="7891.映射.中国" aria-label="复制备用地址2">
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5.5 4.5A2.5 2.5 0 0 1 8 2h6.5A2.5 2.5 0 0 1 17 4.5v6.5a2.5 2.5 0 0 1-2.5 2.5h-6.5A2.5 2.5 0 0 1 5.5 11v-6.5Z" fill="currentColor"/><path d="M3 6a2.5 2.5 0 0 1 2.5-2.5h6.5A2.5 2.5 0 0 1 14.5 6v6.5a2.5 2.5 0 0 1-2.5 2.5H5.5A2.5 2.5 0 0 1 3 12.5V6Z" fill="currentColor" opacity=".45"/></svg>
+              复制
+            </button>
+          </article>
+        </div>
+
+        <div class="info-strip">
+          <div class="info-item">
+            <span class="info-label">服务端</span>
+            <span class="info-value"><strong>Paper 1.21.8</strong> · 全版本（包括基岩版）兼容</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">辅助类 Mod</span>
+            <span class="info-value badge-ok">允许使用</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">开挂行为</span>
+            <span class="info-value badge-no">坚决禁止</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 页面：详细信息 -->
+    <section class="page" id="page-hardware">
+      <div class="container page-body">
+        <div class="page-head">
+          <h2 class="page-title">详细信息</h2>
+          <p class="page-desc">服务器完整硬件规格 · 稳定运行背后的硬核支持</p>
+        </div>
+
+        <div class="detail-grid">
+          <article class="detail-card">
+            <div class="detail-card-head">
+              <div class="spec-icon"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm3 5a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z" fill="currentColor"/></svg></div>
+              <div class="detail-card-title">
+                <h3>处理器 CPU</h3>
+                <p>Intel Xeon E5 2650 v2</p>
+              </div>
+            </div>
+            <dl class="detail-list">
+              <div class="detail-row"><dt>型号</dt><dd>Intel Xeon E5 2650 v2</dd></div>
+              <div class="detail-row"><dt>架构</dt><dd>Ivy Bridge-EP</dd></div>
+              <div class="detail-row"><dt>主频</dt><dd>超频 3.2 GHz</dd></div>
+              <div class="detail-row"><dt>核心 / 线程</dt><dd>8 核 16 线程</dd></div>
+              <div class="detail-row"><dt>插槽</dt><dd>LGA 2011</dd></div>
+              <div class="detail-row"><dt>TDP</dt><dd>95W</dd></div>
+            </dl>
+          </article>
+
+          <article class="detail-card">
+            <div class="detail-card-head">
+              <div class="spec-icon"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 4h14v10H3V4Zm2 2v6h10V6H5Zm1 1h8v4H6V7Zm-3 8h14v1H3v-1Z" fill="currentColor"/></svg></div>
+              <div class="detail-card-title">
+                <h3>主板 Motherboard</h3>
+                <p>X79 v3.01</p>
+              </div>
+            </div>
+            <dl class="detail-list">
+              <div class="detail-row"><dt>型号</dt><dd>X79 v3.01</dd></div>
+              <div class="detail-row"><dt>芯片组</dt><dd>Intel C602</dd></div>
+              <div class="detail-row"><dt>平台</dt><dd>LGA 2011</dd></div>
+              <div class="detail-row"><dt>内存通道</dt><dd>四通道 DDR3</dd></div>
+              <div class="detail-row"><dt>内存插槽</dt><dd>4 × DIMM</dd></div>
+              <div class="detail-row"><dt>定位</dt><dd>工作站 / 服务器级</dd></div>
+            </dl>
+          </article>
+
+          <article class="detail-card">
+            <div class="detail-card-head">
+              <div class="spec-icon"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 2 4 7v6l6 5 6-5V7l-6-5Zm0 2.5L14.2 8l-4.2 3.5L5.8 8l4.2-3.5Z" fill="currentColor"/></svg></div>
+              <div class="detail-card-title">
+                <h3>内存 Memory</h3>
+                <p>Kingston DDR3</p>
+              </div>
+            </div>
+            <dl class="detail-list">
+              <div class="detail-row"><dt>品牌</dt><dd>Kingston 金士顿</dd></div>
+              <div class="detail-row"><dt>类型</dt><dd>DDR3 ECC REG</dd></div>
+              <div class="detail-row"><dt>容量</dt><dd>16 GB</dd></div>
+              <div class="detail-row"><dt>频率</dt><dd>1600 MHz</dd></div>
+              <div class="detail-row"><dt>纠错</dt><dd>ECC 支持</dd></div>
+              <div class="detail-row"><dt>形态</dt><dd>Registered 服务器内存</dd></div>
+            </dl>
+          </article>
+
+          <article class="detail-card">
+            <div class="detail-card-head">
+              <div class="spec-icon"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5Zm4 1h6v2H7V6Zm0 4h6v2H7v-2Zm0 4h4v2H7v-2Z" fill="currentColor"/></svg></div>
+              <div class="detail-card-title">
+                <h3>硬盘 Storage</h3>
+                <p>WD Blue</p>
+              </div>
+            </div>
+            <dl class="detail-list">
+              <div class="detail-row"><dt>品牌</dt><dd>Western Digital 西部数据</dd></div>
+              <div class="detail-row"><dt>系列</dt><dd>WDC Blue</dd></div>
+              <div class="detail-row"><dt>容量</dt><dd>120 GB</dd></div>
+              <div class="detail-row"><dt>类型</dt><dd>SSD 固态硬盘</dd></div>
+              <div class="detail-row"><dt>接口</dt><dd>SATA</dd></div>
+              <div class="detail-row"><dt>用途</dt><dd>系统盘</dd></div>
+            </dl>
+          </article>
+        </div>
+
+        <div class="detail-summary">
+          <div class="detail-summary-head">
+            <div class="spec-icon"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 1.5 4 3.5V9c0 3.7 2.6 6.6 6 7.5 3.4-.9 6-3.8 6-7.5V3.5l-6-2Zm-1 4.5 2.6 3H9v4l-2.6-3H8V6Zm3 3.5L11 8h2v3.5h-2l2 1V14h-3v-2Z" fill="currentColor"/></svg></div>
+            <div class="detail-card-title">
+              <h3>服务器概览</h3>
+              <p>软硬一体的完整装机方案</p>
+            </div>
+          </div>
+          <div class="summary-rows">
+            <div class="summary-item">
+              <span class="summary-key">处理器</span>
+              <span class="summary-val">Xeon E5 2650 v2 · 8 核 16 线程</span>
+            </div>
+            <div class="summary-item">
+              <span class="summary-key">内存</span>
+              <span class="summary-val">16GB DDR3 ECC REG</span>
+            </div>
+            <div class="summary-item">
+              <span class="summary-key">硬盘</span>
+              <span class="summary-val">120GB SSD</span>
+            </div>
+            <div class="summary-item">
+              <span class="summary-key">服务端</span>
+              <span class="summary-val">Paper 1.21.8 · 全版本（包括基岩版）兼容</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 页面：群规 -->
+    <section class="page" id="page-rules">
+      <div class="container page-body">
+        <div class="page-head">
+          <h2 class="page-title">LunarLight 群规</h2>
+          <p class="page-desc">共同守护一个友善、清朗的交流环境</p>
+        </div>
+
+        <div class="rules-grid">
+          <article class="rules-card">
+            <h3 class="rules-title">
+              <span class="rules-num">01</span>红线 · 直接清退
+            </h3>
+            <ul class="rules-list">
+              <li>群内禁止广告、政治立场、反动、色情、违法等相关新闻图片等内容</li>
+              <li>禁止扬言轻生、打架、宣扬负能量等内容</li>
+              <li>禁止无端吵架、人身攻击</li>
+              <li>禁止炫耀为主的贬低新手行为</li>
+              <li>禁止大规模篇幅刷屏宣传其他服务器、视频</li>
+              <li>禁止性别、地域、性向等各方面歧视</li>
+              <li>尊重他人，未经授权禁止盗取群内产出成果</li>
+            </ul>
+            <p class="rules-foot">以上行为发现后直接清退出群</p>
+          </article>
+
+          <article class="rules-card">
+            <h3 class="rules-title">
+              <span class="rules-num">02</span>严格禁止 · 一次即踢
+            </h3>
+            <ul class="rules-list">
+              <li>本群不允许发布和黄赌毒任何相关的内容及言论</li>
+            </ul>
+            <p class="rules-foot">一次就直接踢</p>
+          </article>
+
+          <article class="rules-card">
+            <h3 class="rules-title">
+              <span class="rules-num">03</span>刷屏处置
+            </h3>
+            <ul class="rules-list">
+              <li>第一次刷屏：警告</li>
+              <li>第二次刷屏：禁言</li>
+              <li>第三次：清退</li>
+              <li>禁止刷屏 3 条以上，禁言初始 1.5 小时，之后每次处罚时长翻倍</li>
+            </ul>
+            <p class="rules-foot">1.5h → 3h → 6h → …</p>
+          </article>
+
+          <article class="rules-card">
+            <h3 class="rules-title">
+              <span class="rules-num">04</span>其他规范
+            </h3>
+            <ul class="rules-list">
+              <li>禁黄，违反按红线处理</li>
+              <li>爆粗口：初始禁言 1 小时，之后每次处罚时长 ×3</li>
+              <li>被辱骂请找管理或群主处理，骂回去按互骂处理（抽象除外）</li>
+              <li>尽量把群名称改成游戏名，让人看得懂即可，非强制</li>
+            </ul>
+            <p class="rules-foot">文明交流，友善相处</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 页面：联系我们 -->
+    <section class="page" id="page-contact">
+      <div class="container page-body">
+        <div class="page-head">
+          <h2 class="page-title">联系我们</h2>
+          <p class="page-desc">服务器问题与改进建议，欢迎通过邮箱告诉我们</p>
+        </div>
+        <div class="contact-panel">
+          <div class="contact-icon">
+            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 5.5C3 4.67 3.67 4 4.5 4h11c.83 0 1.5.67 1.5 1.5v9c0 .83-.67 1.5-1.5 1.5h-11A1.5 1.5 0 0 1 3 14.5v-9Zm1.5.5v.65L10 10.4l5.5-4.25V6H4.5Zm0 1.5V14.5h11V7.5L10 11.6 4.5 7.5Z" fill="currentColor"/></svg>
+          </div>
+          <h3>联系邮箱</h3>
+          <p class="contact-desc">服务器问题与改进建议邮箱，有什么好建议写下来发给我们</p>
+          <a class="btn btn-primary" href="mailto:arclightness@outlook.it">arclightness@outlook.it</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>LunarLightMC · LunarLight 管理组 & 服务器所有</p>
+      <p class="footer-sub">愿月光照亮你的每一次冒险</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
