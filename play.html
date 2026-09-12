@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="LunarLightMC 玩法介绍：ArcAI、Zmusic、传送插件。">
+  <title>LunarLightMC · 玩法</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch.png">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="toast" class="toast">
+    <span class="toast-icon">*</span>
+    <span id="toastMsg">已复制到剪贴板</span>
+  </div>
+
+  <div class="container">
+    <header class="header">
+      <div class="logo-large">
+        <img src="assets/favicon.png" alt="LunarLightMC 服务器图标">
+        <div class="logo-name">LunarLightMC</div>
+        <div class="logo-sub">玩法与常用指令</div>
+      </div>
+    </header>
+
+    <nav class="tabs" aria-label="板块导航">
+      <a class="tab-btn" href="index.html">主页</a>
+      <a class="tab-btn" href="network.html">网络</a>
+      <a class="tab-btn active" href="play.html">玩法</a>
+      <a class="tab-btn" href="hardware.html">配置</a>
+      <a class="tab-btn" href="rules.html">规则</a>
+      <a class="tab-btn" href="links.html">链接</a>
+    </nav>
+
+    <div class="page-section">
+      <div class="feature-card">
+        <h3>基本玩法</h3>
+        <p>服务端版本：<span class="cmd">Leaf 26.1.2</span>，全版本兼容。</p>
+        <p>可以使用生存辅助类 Mod，禁止开挂。</p>
+        <p>Java 与基岩均可加入，建造、探索、生存随你喜欢。</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>ArcAI 聊天</h3>
+        <p>服务器已接入 ChatGPT-4o。在游戏中输入以下指令开始聊天：</p>
+        <ul>
+          <li><span class="cmd">/arcai chat</span> — 与 AI 开始对话</li>
+        </ul>
+      </div>
+
+      <div class="feature-card">
+        <h3>Zmusic 音乐插件</h3>
+        <p><span class="label">客户端需安装 Zmusic 模组</span>，可在 PCL 或 HMCL 下载页面搜索该 MOD。</p>
+        <p>更多指令见官方文档：<a class="cmd" href="https://docs.zmusic.cc/guide/command-permissions.html" target="_blank" rel="noopener">docs.zmusic.cc</a></p>
+        <table>
+          <thead>
+            <tr><th>命令</th><th>作用</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="cmd">/zmusic play &lt;keyword&gt;</span></td><td>按关键词播放音乐</td></tr>
+            <tr><td><span class="cmd">/zmusic search &lt;keyword&gt;</span></td><td>按关键词搜索音乐</td></tr>
+            <tr><td><span class="cmd">/zmusic stop</span></td><td>停止当前播放</td></tr>
+            <tr><td><span class="cmd">/zmusic playlist list</span></td><td>查看个人歌单</td></tr>
+            <tr><td><span class="cmd">/zmusic playlist create &lt;name&gt;</span></td><td>创建个人歌单</td></tr>
+            <tr><td><span class="cmd">/zmusic playlist delete &lt;name&gt;</span></td><td>删除个人歌单</td></tr>
+            <tr><td><span class="cmd">/zmusic playlist add &lt;playlist&gt; &lt;song&gt;</span></td><td>向个人歌单添加歌曲</td></tr>
+            <tr><td><span class="cmd">/zmusic playlist remove &lt;playlist&gt; &lt;song&gt;</span></td><td>从个人歌单移除歌曲</td></tr>
+            <tr><td><span class="cmd">/zmusic playlist play &lt;playlist&gt;</span></td><td>播放个人歌单</td></tr>
+            <tr><td><span class="cmd">/zmusic playlist global &lt;subcommand&gt;</span></td><td>管理全局歌单</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="feature-card">
+        <h3>传送插件</h3>
+        <table>
+          <thead>
+            <tr><th>命令</th><th>作用</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="cmd">/tpa</span></td><td>向玩家发送传送请求</td></tr>
+            <tr><td><span class="cmd">/tpaccept</span></td><td>接受传送请求（可直接点聊天文字）</td></tr>
+            <tr><td><span class="cmd">/tpdeny</span></td><td>拒绝传送请求</td></tr>
+            <tr><td><span class="cmd">/tphere</span></td><td>请求玩家传送到你身边</td></tr>
+            <tr><td><span class="cmd">/tpall</span></td><td>强制将所有在线玩家传送到目标位置（不加参数则传到使用者身边）</td></tr>
+            <tr><td><span class="cmd">/tplogout</span></td><td>传送到该玩家最后一次下线的位置</td></tr>
+            <tr><td><span class="cmd">/sethome</span></td><td>设置家</td></tr>
+            <tr><td><span class="cmd">/delhome</span></td><td>删除家</td></tr>
+            <tr><td><span class="cmd">/home &lt;家的名字&gt;</span></td><td>回到指定的家</td></tr>
+            <tr><td><span class="cmd">/spawn</span></td><td>回到主城</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="site-footer">LunarLightMC · LunarLight 管理组 &amp; 服务器所有</div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
